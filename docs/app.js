@@ -68,7 +68,15 @@ const healthCheckBtn = document.getElementById('healthCheckBtn');
 // Auth & registration
 function initAuth() {
     msalInstance = new msal.PublicClientApplication(msalConfig);
-    loginBtn.onclick = () => msalInstance.loginPopup(loginRequest).then(handleLogin);
+// ORIGINAL    loginBtn.onclick = () => msalInstance.loginPopup(loginRequest).then(handleLogin);
+    loginBtn.onclick = () => {
+    // msalInstance.loginPopup(loginRequest).then(handleLogin);
+    // Instead, for preview:
+    authSection.style.display = "none";
+    checklistSection.style.display = "";
+    loadChecklist();
+    };
+    
 }
 function handleLogin(resp) {
     account = resp.account;
