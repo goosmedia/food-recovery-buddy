@@ -1,0 +1,55 @@
+body {
+    font-family: system-ui, sans-serif;
+    margin: 0;
+    background: #fafafa;
+    color: #222;
+}
+header {
+    background: #357960;
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+}
+main {
+    padding: 1rem;
+    max-width: 500px;
+    margin: auto;
+}
+.card {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(53,121,96,0.10);
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+}
+button {
+    background: #357960;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 0.7em 1.2em;
+    font-size: 1em;
+    cursor: pointer;
+    margin: 0.5em 0;
+}
+button[disabled] {
+    background: #bbb;
+    cursor: not-allowed;
+}
+ul {
+    padding-left: 1.2em;
+}
+footer {
+    text-align: center;
+    padding: 1em;
+    color: #888;
+    font-size: 0.9em;
+}
+@media (max-width: 600px) {
+    main {
+        padding: 0.5rem;
+    }
+    .card {
+        padding: 0.5rem;
+    }
+}
