@@ -44,37 +44,53 @@ const checklistSection = document.getElementById('checklistSection');
 const offlineQueueSection = document.getElementById('offlineQueueSection');
 const healthCheckBtn = document.getElementById('healthCheckBtn');
 
-// Load tasks and users
+// Load tasks and users with error handling
 async function loadChecklist() {
-    const [tasks, users] = await Promise.all([
-        fetch('tasks.json').then(r => r.json()),
-        fetch('users.json').then(r => r.json())
-    ]);
-    // User select
-    let userSel = document.createElement('select');
-    userSel.id = "userSelector";
-    users.forEach(u => {
-        let opt = document.createElement('option');
-        opt.value = u.id;
-        opt.textContent = u.name;
-        userSel.appendChild(opt);
-    });
-    document.getElementById('userSelect').appendChild(userSel);
+    try {
+        const [tasks, users] = await Promise.all([
+            fetch('tasks.json').then(r => {
+                if (!r.ok) throw new Error("tasks.json not found");
+                return r.json();
+            }),
+            fetch('users.json').then(r => {
+                if (!r.ok) throw new Error("users.json not found");
+                return r.json();
+            })
+        ]);
 
-    // Checklist
-    let taskList = document.getElementById('taskList');
-    taskList.innerHTML = "";
-    // Show only today's tasks
-    const today = new Date().toLocaleString('en-US', { weekday: 'long' });
-    tasks.filter(task => task.days.includes(today)).forEach(task => {
-        let li = document.createElement('li');
-        li.textContent = task.title + (task.details ? ` (${task.details})` : "");
-        let btn = document.createElement('button');
-        btn.textContent = "Complete";
-        btn.onclick = () => completeTask(task, userSel.value);
-        li.appendChild(btn);
-        taskList.appendChild(li);
-    });
+        // User select
+        let userSel = document.createElement('select');
+        userSel.id = "userSelector";
+        users.forEach(u => {
+            let opt = document.createElement('option');
+            opt.value = u.id;
+            opt.textContent = u.name;
+            userSel.appendChild(opt);
+        });
+        document.getElementById('userSelect').innerHTML = "";
+        document.getElementById('userSelect').appendChild(userSel);
+
+        // Checklist
+        let taskList = document.getElementById('taskList');
+        taskList.innerHTML = "";
+        // Show only today's tasks
+        const today = new Date().toLocaleString('en-US', { weekday: 'long' });
+        tasks.filter(task => task.days.includes(today)).forEach(task => {
+            let li = document.createElement('li');
+            li.textContent = task.title + (task.details ? ` (${task.details})` : "");
+            let btn = document.createElement('button');
+            btn.textContent = "Complete";
+            btn.onclick = () => completeTask(task, userSel.value);
+            li.appendChild(btn);
+            taskList.appendChild(li);
+        });
+    } catch (err) {
+        // Show a clear error in the UI
+        document.getElementById('main').innerHTML = `<div class="card" style="color: red;"><b>Error loading checklist:</b> ${err.message}<br>
+        Make sure tasks.json and users.json exist in the same folder as index.html and are valid JSON.<br>
+        <pre>${err.stack}</pre></div>`;
+        console.error("Checklist load error", err);
+    }
 }
 
 // Task completion
