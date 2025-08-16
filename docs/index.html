@@ -6,7 +6,6 @@
     <title>Food Recovery Buddy</title>
     <link rel="manifest" href="manifest.json">
     <link rel="stylesheet" href="styles.css">
-    <script src="https://alcdn.msauth.net/browser/2.32.0/js/msal-browser.min.js"></script>
     <script src="https://unpkg.com/htmx.org@1.9.6"></script>
 </head>
 <body>
@@ -15,17 +14,11 @@
         <button id="healthCheckBtn">Health Check</button>
     </header>
     <main id="main">
-        <!-- Login UI -->
-        <section id="authSection" class="card">
-            <h2>Sign In</h2>
-            <button id="loginBtn">Sign In with Microsoft</button>
-        </section>
-        <!-- Checklist UI (hidden until login) -->
-        <section id="checklistSection" class="card" style="display:none;">
+        <!-- Checklist UI -->
+        <section id="checklistSection" class="card">
             <h2>Today's Checklist</h2>
             <div id="userSelect"></div>
             <ul id="taskList"></ul>
-            <button id="logoutBtn">Sign Out</button>
         </section>
         <!-- Offline Queue UI -->
         <section id="offlineQueueSection" class="card" style="display:none;">
