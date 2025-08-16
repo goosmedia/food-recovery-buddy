@@ -114,7 +114,6 @@
     "days": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"]
   },
 
-  // Monday
   {
     "id": "monday-1",
     "title": "Walls and cooler and freezer doors washed",
@@ -140,7 +139,6 @@
     "days": ["Monday"]
   },
 
-  // Tuesday
   {
     "id": "tuesday-1",
     "title": "Inventory (garbage bags, gloves, soap, bleach, floor cleaner, paper towels, bread bags, twist ties, masking tape, pens, pencils, sharpies)",
@@ -148,7 +146,6 @@
     "days": ["Tuesday"]
   },
 
-  // Wednesday
   {
     "id": "wednesday-1",
     "title": "Counters/shelves organized and washed",
@@ -156,7 +153,6 @@
     "days": ["Wednesday"]
   },
 
-  // Thursday
   {
     "id": "thursday-1",
     "title": "Recycling and garbage bins washed out in mop sink",
@@ -164,7 +160,6 @@
     "days": ["Thursday"]
   },
 
-  // Friday
   {
     "id": "friday-1",
     "title": "Sweep cooler and freezer",
@@ -172,7 +167,6 @@
     "days": ["Friday"]
   },
 
-  // Saturday
   {
     "id": "saturday-1",
     "title": "Hallway swept and mopped",
@@ -186,7 +180,6 @@
     "days": ["Saturday"]
   },
 
-  // Sunday
   {
     "id": "sunday-1",
     "title": "Warehouse area swept and mopped",
