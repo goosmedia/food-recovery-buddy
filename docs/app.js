@@ -1,22 +1,4 @@
-// Food Recovery Buddy Main App Logic
-
-// DEMO MODE by appending to URL index.html?demo=1 and it’ll show the checklist UI without signing in.
-const demoMode = window.location.search.includes('demo=1');
-
-// In initAuth(), after defining msalInstance:
-if (demoMode) {
-    // Fake login: skip real MS sign-in
-    authSection.style.display = "none";
-    checklistSection.style.display = "";
-    loadChecklist();
-    return;
-}
-
-// Load MSAL config
-importScripts('msal-config.js');
-
-let msalInstance = null;
-let account = null;
+// Food Recovery Buddy Main App Logic (No Authentication Version)
 
 // IndexedDB for offline queue (simple version)
 const DB_NAME = 'frb-offline';
@@ -58,37 +40,9 @@ function clearQueue() {
 }
 
 // UI Elements
-const loginBtn = document.getElementById('loginBtn');
-const logoutBtn = document.getElementById('logoutBtn');
-const authSection = document.getElementById('authSection');
 const checklistSection = document.getElementById('checklistSection');
 const offlineQueueSection = document.getElementById('offlineQueueSection');
 const healthCheckBtn = document.getElementById('healthCheckBtn');
-
-// Auth & registration
-function initAuth() {
-    msalInstance = new msal.PublicClientApplication(msalConfig);
-// ORIGINAL    loginBtn.onclick = () => msalInstance.loginPopup(loginRequest).then(handleLogin);
-    loginBtn.onclick = () => {
-    // msalInstance.loginPopup(loginRequest).then(handleLogin);
-    // Instead, for preview:
-    authSection.style.display = "none";
-    checklistSection.style.display = "";
-    loadChecklist();
-    };
-    
-}
-function handleLogin(resp) {
-    account = resp.account;
-    authSection.style.display = "none";
-    checklistSection.style.display = "";
-    loadChecklist();
-}
-logoutBtn.onclick = () => {
-    msalInstance.logoutPopup();
-    checklistSection.style.display = "none";
-    authSection.style.display = "";
-};
 
 // Load tasks and users
 async function loadChecklist() {
@@ -110,7 +64,9 @@ async function loadChecklist() {
     // Checklist
     let taskList = document.getElementById('taskList');
     taskList.innerHTML = "";
-    tasks.forEach(task => {
+    // Show only today's tasks
+    const today = new Date().toLocaleString('en-US', { weekday: 'long' });
+    tasks.filter(task => task.days.includes(today)).forEach(task => {
         let li = document.createElement('li');
         li.textContent = task.title + (task.details ? ` (${task.details})` : "");
         let btn = document.createElement('button');
@@ -130,11 +86,8 @@ function completeTask(task, userId) {
         timestamp: new Date().toISOString(),
         details: task.details || ""
     };
-    if (navigator.onLine) {
-        logToExcel(entry);
-    } else {
-        addToQueue(entry).then(updateOfflineQueueUI);
-    }
+    // In this version, just queue everything (no online logging)
+    addToQueue(entry).then(updateOfflineQueueUI);
 }
 function updateOfflineQueueUI() {
     getQueue().then(queue => {
@@ -148,39 +101,6 @@ function updateOfflineQueueUI() {
         });
     });
 }
-
-// Log to Microsoft Graph Excel
-async function logToExcel(entry) {
-    // Get token
-    const tokenResp = await msalInstance.acquireTokenSilent(loginRequest);
-    const token = tokenResp.accessToken;
-    // API call (placeholder; replace with actual Excel Graph API logic)
-    fetch('https://graph.microsoft.com/v1.0/me/drive/items/<WORKBOOK_ID>/workbook/tables/<TABLE_NAME>/rows/add', {
-        method: 'POST',
-        headers: {
-            'Authorization': `Bearer ${token}`,
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-            values: [[entry.taskId, entry.title, entry.userId, entry.timestamp, entry.details]]
-        })
-    }).then(resp => {
-        if (!resp.ok) throw new Error("Excel log failed");
-    }).catch(err => {
-        // If error, queue for retry
-        addToQueue(entry).then(updateOfflineQueueUI);
-    });
-}
-
-// Sync offline queue when online
-window.addEventListener('online', () => {
-    getQueue().then(queue => {
-        if (queue.length) {
-            queue.forEach(entry => logToExcel(entry));
-            clearQueue().then(updateOfflineQueueUI);
-        }
-    });
-});
 
 // Health check button
 healthCheckBtn.onclick = () => window.location.href = "health-check.html";
@@ -196,5 +116,8 @@ function scheduleMidnightReset() {
 scheduleMidnightReset();
 
 // Init
-initAuth();
-updateOfflineQueueUI();
+document.addEventListener('DOMContentLoaded', () => {
+    checklistSection.style.display = "";
+    loadChecklist();
+    updateOfflineQueueUI();
+});
