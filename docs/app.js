@@ -1,5 +1,17 @@
 // Food Recovery Buddy Main App Logic
 
+// DEMO MODE by appending to URL index.html?demo=1 and it’ll show the checklist UI without signing in.
+const demoMode = window.location.search.includes('demo=1');
+
+// In initAuth(), after defining msalInstance:
+if (demoMode) {
+    // Fake login: skip real MS sign-in
+    authSection.style.display = "none";
+    checklistSection.style.display = "";
+    loadChecklist();
+    return;
+}
+
 // Load MSAL config
 importScripts('msal-config.js');
 
