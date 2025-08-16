@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Health Check - Food Recovery Buddy</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Health Check</h1>
+    </header>
+    <main class="card">
+        <h2>System Status</h2>
+        <ul id="healthList">
+            <li id="tokenStatus">Token: <span>Checking...</span></li>
+            <li id="excelStatus">Excel Table: <span>Checking...</span></li>
+            <li id="networkStatus">Network: <span>Checking...</span></li>
+        </ul>
+        <button onclick="window.location.href='index.html'">Back</button>
+    </main>
+    <script>
+        // Health check logic (token, Excel, network reachability)
+        async function checkToken() {
+            // Placeholder: replace with MSAL token verification
+            document.querySelector('#tokenStatus span').textContent = 'OK (demo)';
+        }
+        async function checkExcel() {
+            // Placeholder: replace with Graph Excel API check
+            document.querySelector('#excelStatus span').textContent = 'OK (demo)';
+        }
+        function checkNetwork() {
+            document.querySelector('#networkStatus span').textContent = navigator.onLine ? 'Online' : 'Offline';
+        }
+        checkToken();
+        checkExcel();
+        checkNetwork();
+        window.addEventListener('online', checkNetwork);
+        window.addEventListener('offline', checkNetwork);
+    </script>
+</body>
+</html>
