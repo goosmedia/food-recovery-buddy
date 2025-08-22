@@ -1,0 +1,21 @@
+{
+  "name": "food-recovery-buddy",
+  "version": "1.0.0",
+  "description": "Daily task logger for food recovery teams",
+  "main": "index.html",
+  "scripts": {
+    "start": "python3 -m http.server 8000",
+    "dev": "python3 -m http.server 8000",
+    "serve": "python3 -m http.server 8000"
+  },
+  "keywords": [
+    "pwa",
+    "food-recovery",
+    "task-logger",
+    "offline-first"
+  ],
+  "author": "Food Recovery Team",
+  "license": "MIT",
+  "devDependencies": {},
+  "dependencies": {}
+}

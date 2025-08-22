@@ -1,0 +1,60 @@
+{
+  "users": [
+    "Alice",
+    "Bob",
+    "Charlie",
+    "Diana",
+    "Eve"
+  ],
+  "tasks": [
+    {
+      "id": "daily-1",
+      "task": "Check refrigerator temperatures",
+      "explanation": "Verify all refrigerators are maintaining proper temperature ranges",
+      "day_of_week": ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"],
+      "order_sequencer": 1
+    },
+    {
+      "id": "daily-2",
+      "task": "Inspect food quality",
+      "explanation": "Check for any spoiled or expired food items",
+      "day_of_week": ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"],
+      "order_sequencer": 2
+    },
+    {
+      "id": "daily-3",
+      "task": "Clean food preparation areas",
+      "explanation": "Sanitize all surfaces and equipment",
+      "day_of_week": ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"],
+      "order_sequencer": 3
+    },
+    {
+      "id": "monday-1",
+      "task": "Weekly inventory count",
+      "explanation": "Complete full inventory of all food items",
+      "day_of_week": ["monday"],
+      "order_sequencer": 4
+    },
+    {
+      "id": "wednesday-1",
+      "task": "Supplier order review",
+      "explanation": "Review and update supplier orders for the week",
+      "day_of_week": ["wednesday"],
+      "order_sequencer": 5
+    },
+    {
+      "id": "friday-1",
+      "task": "Weekend preparation",
+      "explanation": "Prepare food items for weekend operations",
+      "day_of_week": ["friday"],
+      "order_sequencer": 6
+    },
+    {
+      "id": "sunday-1",
+      "task": "Weekly cleanup",
+      "explanation": "Deep clean all areas and equipment",
+      "day_of_week": ["sunday"],
+      "order_sequencer": 7
+    }
+  ]
+}

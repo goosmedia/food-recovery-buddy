@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Recovery Buddy</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#4CAF50">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🍽️ Food Recovery Buddy</h1>
+            <p class="date-display" id="dateDisplay"></p>
+        </header>
+
+        <main>
+            <!-- User Selection Section -->
+            <section class="user-selection" id="userSelection">
+                <h2>Who are you today?</h2>
+                <div class="user-grid" id="userGrid">
+                    <!-- Users will be populated here -->
+                </div>
+            </section>
+
+            <!-- Task List Section -->
+            <section class="task-list hidden" id="taskList">
+                <h2>Today's Tasks</h2>
+                <div class="task-container" id="taskContainer">
+                    <!-- Tasks will be populated here -->
+                </div>
+                
+                <div class="action-buttons">
+                    <button class="btn btn-secondary" id="exportBtn">Export CSV</button>
+                    <button class="btn btn-primary" id="saveBtn">Save & Complete</button>
+                </div>
+            </section>
+
+            <!-- Completion Summary -->
+            <section class="completion-summary hidden" id="completionSummary">
+                <h2>Tasks Completed Today</h2>
+                <div class="summary-list" id="summaryList">
+                    <!-- Summary will be populated here -->
+                </div>
+                <button class="btn btn-primary" id="newDayBtn">Start New Day</button>
+            </section>
+        </main>
+    </div>
+
+    <!-- Task Detail Modal -->
+    <div class="modal hidden" id="taskModal">
+        <div class="modal-content">
+            <span class="close" id="closeModal">&times;</span>
+            <h3 id="modalTaskName"></h3>
+            <p id="modalTaskExplanation"></p>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+    <script>
+        // Register service worker for PWA
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('sw.js')
+                .then(registration => console.log('SW registered'))
+                .catch(error => console.log('SW registration failed'));
+        }
+    </script>
+</body>
+</html>
