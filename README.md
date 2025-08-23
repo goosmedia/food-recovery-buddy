@@ -1,4 +1,4 @@
-# Food Recovery Buddy - Daily Task Logger
+git# Food Recovery Buddy - Daily Task Logger
 
 A **Progressive Web App (PWA)** for logging daily food recovery tasks without requiring immediate authentication. Built for teams who need to track task completion quickly and efficiently.
 
