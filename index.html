@@ -27,13 +27,18 @@
             <!-- Task List Section -->
             <section class="task-list hidden" id="taskList">
                 <h2>Today's Tasks</h2>
+                
+                <!-- Task Summary -->
+                <div class="task-summary" id="taskSummary">
+                    <!-- Summary will be populated here -->
+                </div>
+                
                 <div class="task-container" id="taskContainer">
                     <!-- Tasks will be populated here -->
                 </div>
                 
                 <div class="action-buttons">
-                    <button class="btn btn-secondary" id="exportBtn">Export CSV</button>
-                    <button class="btn btn-primary" id="saveBtn">Save & Complete</button>
+                    <button class="btn btn-primary" id="saveBtn">View Summary</button>
                 </div>
             </section>
 
@@ -43,17 +48,27 @@
                 <div class="summary-list" id="summaryList">
                     <!-- Summary will be populated here -->
                 </div>
-                <button class="btn btn-primary" id="newDayBtn">Start New Day</button>
+                
+                <div class="summary-actions">
+                    <button class="btn btn-primary btn-large" id="returnToTasksBtn">Return to Tasks</button>
+                    
+                    <div class="secondary-actions">
+                        <button class="btn btn-secondary btn-small" id="downloadCsvBtn">Download CSV</button>
+                        <button class="btn btn-danger btn-small" id="resetTasksBtn">Reset Today's Tasks</button>
+                    </div>
+                </div>
             </section>
         </main>
     </div>
 
-    <!-- Task Detail Modal -->
-    <div class="modal hidden" id="taskModal">
-        <div class="modal-content">
-            <span class="close" id="closeModal">&times;</span>
-            <h3 id="modalTaskName"></h3>
-            <p id="modalTaskExplanation"></p>
+    <!-- Fixed Bottom User Bar -->
+    <div class="bottom-user-bar hidden" id="bottomUserBar">
+        <div class="current-user-display">
+            <span class="user-label">Current:</span>
+            <span class="current-user-name" id="bottomCurrentUserName"></span>
+        </div>
+        <div class="quick-user-list" id="bottomQuickUserList">
+            <!-- Users will be populated here -->
         </div>
     </div>
 

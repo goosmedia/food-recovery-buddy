@@ -6,55 +6,224 @@
     "Diana",
     "Eve"
   ],
+  "adminPin": "7778",
   "tasks": [
     {
-      "id": "daily-1",
-      "task": "Check refrigerator temperatures",
-      "explanation": "Verify all refrigerators are maintaining proper temperature ranges",
+      "id": "daily-100",
+      "task": "Pickup keys from van",
+      "explanation": "Retrieve van keys at the start of each shift to ensure vehicle access for food pickup and delivery operations.",
       "day_of_week": ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"],
-      "order_sequencer": 1
+      "order_sequencer": 100
     },
     {
-      "id": "daily-2",
-      "task": "Inspect food quality",
-      "explanation": "Check for any spoiled or expired food items",
+      "id": "daily-200",
+      "task": "Green bins picked up from farm shed",
+      "explanation": "Collect empty green bins from the farm shed to prepare for incoming food collection and sorting.",
       "day_of_week": ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"],
-      "order_sequencer": 2
+      "order_sequencer": 200
     },
     {
-      "id": "daily-3",
-      "task": "Clean food preparation areas",
-      "explanation": "Sanitize all surfaces and equipment",
+      "id": "daily-300",
+      "task": "Sweep out farm shed",
+      "explanation": "Clean the farm shed floor and report any food items that were not picked up during collection.",
       "day_of_week": ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"],
-      "order_sequencer": 3
+      "order_sequencer": 300
     },
     {
-      "id": "monday-1",
-      "task": "Weekly inventory count",
-      "explanation": "Complete full inventory of all food items",
+      "id": "daily-400",
+      "task": "Temperature logged",
+      "explanation": "Record temperature readings for all refrigeration units to ensure food safety compliance.",
+      "day_of_week": ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"],
+      "order_sequencer": 400
+    },
+    {
+      "id": "daily-500",
+      "task": "All food sorted & labeled",
+      "explanation": "Organize incoming food items by type and apply proper labeling for identification and tracking.",
+      "day_of_week": ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"],
+      "order_sequencer": 500
+    },
+    {
+      "id": "daily-600",
+      "task": "Clear unlabeled food from shelves",
+      "explanation": "Remove any food items from shelves that are not specifically labeled for kitchen use.",
+      "day_of_week": ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"],
+      "order_sequencer": 600
+    },
+    {
+      "id": "daily-700",
+      "task": "All food weighed in",
+      "explanation": "Log incoming food quantities in the app by weighing and recording all received items.",
+      "day_of_week": ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"],
+      "order_sequencer": 700
+    },
+    {
+      "id": "daily-800",
+      "task": "All food weighed out",
+      "explanation": "Log outgoing food quantities in the app by weighing and recording all distributed items.",
+      "day_of_week": ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"],
+      "order_sequencer": 800
+    },
+    {
+      "id": "daily-900",
+      "task": "Grocery in yellow bins and labeled",
+      "explanation": "Place grocery items in designated yellow bins and ensure proper labeling for organization.",
+      "day_of_week": ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"],
+      "order_sequencer": 900
+    },
+    {
+      "id": "daily-1000",
+      "task": "Farm food out to farm shed",
+      "explanation": "Transfer farm food items to the farm shed, coordinated by driver or coordinator.",
+      "day_of_week": ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"],
+      "order_sequencer": 1000
+    },
+    {
+      "id": "daily-1100",
+      "task": "Bins washed & sanitized",
+      "explanation": "Clean and sanitize all food bins to maintain hygiene standards and prevent contamination.",
+      "day_of_week": ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"],
+      "order_sequencer": 1100
+    },
+    {
+      "id": "daily-1200",
+      "task": "Sinks emptied of garbage",
+      "explanation": "Remove all garbage and debris from sink areas to maintain clean working conditions.",
+      "day_of_week": ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"],
+      "order_sequencer": 1200
+    },
+    {
+      "id": "daily-1300",
+      "task": "Recycling and garbage out",
+      "explanation": "Remove all recycling materials and garbage from the facility to maintain cleanliness.",
+      "day_of_week": ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"],
+      "order_sequencer": 1300
+    },
+    {
+      "id": "daily-1400",
+      "task": "Counters washed and sanitized",
+      "explanation": "Clean and sanitize all counter surfaces to maintain food safety and hygiene standards.",
+      "day_of_week": ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"],
+      "order_sequencer": 1400
+    },
+    {
+      "id": "daily-1500",
+      "task": "Cooler and freezer locked and lights off",
+      "explanation": "Secure all refrigeration units and turn off lights to ensure proper security and energy efficiency.",
+      "day_of_week": ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"],
+      "order_sequencer": 1500
+    },
+    {
+      "id": "daily-1600",
+      "task": "Sweep and mop",
+      "explanation": "Clean all floor surfaces by sweeping debris and mopping with appropriate cleaning solutions.",
+      "day_of_week": ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"],
+      "order_sequencer": 1600
+    },
+    {
+      "id": "daily-1700",
+      "task": "Mop rinsed, bucket emptied, mop drying in ringer",
+      "explanation": "Clean mop equipment, empty cleaning bucket, and set mop to dry in the ringer for next use.",
+      "day_of_week": ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"],
+      "order_sequencer": 1700
+    },
+    {
+      "id": "daily-1800",
+      "task": "Cardboard boxes stacked neatly",
+      "explanation": "Organize and stack all cardboard boxes in a neat, organized manner for recycling or reuse.",
+      "day_of_week": ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"],
+      "order_sequencer": 1800
+    },
+    {
+      "id": "daily-1900",
+      "task": "Return keys to van",
+      "explanation": "Return van keys to their designated location at the end of each shift.",
+      "day_of_week": ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"],
+      "order_sequencer": 1900
+    },
+    {
+      "id": "weekly-2000",
+      "task": "Lock and alarm",
+      "explanation": "Secure the facility by activating alarm system and ensuring all locks are properly engaged.",
+      "day_of_week": ["sunday", "monday"],
+      "order_sequencer": 2000
+    },
+    {
+      "id": "weekly-2100",
+      "task": "Lock gate",
+      "explanation": "Secure the facility gate to prevent unauthorized access during closed hours.",
+      "day_of_week": ["sunday", "monday"],
+      "order_sequencer": 2100
+    },
+    {
+      "id": "weekly-2200",
+      "task": "Walls and cooler and freezer doors washed",
+      "explanation": "Clean walls and refrigeration unit doors to maintain hygiene and appearance standards.",
       "day_of_week": ["monday"],
-      "order_sequencer": 4
+      "order_sequencer": 2200
     },
     {
-      "id": "wednesday-1",
-      "task": "Supplier order review",
-      "explanation": "Review and update supplier orders for the week",
+      "id": "weekly-2300",
+      "task": "Cobs bread bagged",
+      "explanation": "Package Cobs bread items in appropriate bags for distribution and storage.",
+      "day_of_week": ["monday"],
+      "order_sequencer": 2300
+    },
+    {
+      "id": "weekly-2400",
+      "task": "Inventory supplies",
+      "explanation": "Check and record inventory levels for garbage bags, gloves, soap, bleach, floor cleaner, paper towels, bread bags, twist ties, masking tape, pens, pencils, and sharpies.",
+      "day_of_week": ["tuesday"],
+      "order_sequencer": 2400
+    },
+    {
+      "id": "weekly-2500",
+      "task": "Counters and shelves organized and washed",
+      "explanation": "Clean and organize all counter surfaces and storage shelves to maintain order and hygiene.",
       "day_of_week": ["wednesday"],
-      "order_sequencer": 5
+      "order_sequencer": 2500
     },
     {
-      "id": "friday-1",
-      "task": "Weekend preparation",
-      "explanation": "Prepare food items for weekend operations",
+      "id": "weekly-2600",
+      "task": "Recycling and garbage bins washed out",
+      "explanation": "Clean recycling and garbage bins in the mop sink to prevent odors and maintain cleanliness.",
+      "day_of_week": ["thursday"],
+      "order_sequencer": 2600
+    },
+    {
+      "id": "weekly-2700",
+      "task": "Sweep cooler and freezer",
+      "explanation": "Clean floor surfaces in cooler and freezer units to remove debris and maintain cleanliness.",
       "day_of_week": ["friday"],
-      "order_sequencer": 6
+      "order_sequencer": 2700
     },
     {
-      "id": "sunday-1",
-      "task": "Weekly cleanup",
-      "explanation": "Deep clean all areas and equipment",
+      "id": "weekly-2800",
+      "task": "Hallway swept and mopped",
+      "explanation": "Clean hallway floors by sweeping debris and mopping with appropriate cleaning solutions.",
+      "day_of_week": ["saturday"],
+      "order_sequencer": 2800
+    },
+    {
+      "id": "weekly-2900",
+      "task": "Cobs bread bagged",
+      "explanation": "Package Cobs bread items in appropriate bags for distribution and storage.",
+      "day_of_week": ["saturday"],
+      "order_sequencer": 2900
+    },
+    {
+      "id": "weekly-3000",
+      "task": "Warehouse area swept and mopped",
+      "explanation": "Clean warehouse floor surfaces by sweeping debris and mopping with appropriate cleaning solutions.",
       "day_of_week": ["sunday"],
-      "order_sequencer": 7
+      "order_sequencer": 3000
+    },
+    {
+      "id": "weekly-3100",
+      "task": "Cobs bread bagged",
+      "explanation": "Package Cobs bread items in appropriate bags for distribution and storage.",
+      "day_of_week": ["sunday"],
+      "order_sequencer": 3100
     }
   ]
 }
