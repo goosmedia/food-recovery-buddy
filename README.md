@@ -56,7 +56,7 @@ The app configuration is stored in `data/config.json`:
 ```json
 {
   "users": ["Alice", "Bob", "Charlie", "Diana", "Eve"],
-  "adminPin": "7778",
+  "adminPin": "<redacted>",
   "tasks": [
     {
       "id": "daily-100",
@@ -89,7 +89,7 @@ The app configuration is stored in `data/config.json`:
 ## 🔒 Security Features
 
 ### Admin PIN Protection
-- **Reset Function**: Requires admin PIN (default: 7778)
+- **Reset Function**: Requires admin PIN
 - **Configurable**: Change PIN in config.json
 - **Double Confirmation**: PIN verification + final warning
 
